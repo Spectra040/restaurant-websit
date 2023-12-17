@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'BitterRose';
+    src: url('../fonts/Bitter\ Rose\ DEMO.otf') format('opentype'); /* Adjust the file name and format as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Chillax';
+    src: url('../fonts/Chillax-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    background: url('../images/bg.png') center/cover no-repeat; /* Set background directly on body */
+    background-color: black;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    margin-top: 30px;
+}
+
+header img {
+    display: block;
+    margin: 0 auto;
+    opacity: 1; 
+    width: 150px; 
+    height: auto; 
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 0;
+    padding: 0;
+    opacity: 0; /* Start with opacity set to 0 */
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity set to 0 */
+    }
+    to {
+        opacity: 1; /* End with opacity set to 1 */
+    }
+}
+
+
+.slogan {
+    font-style: italic;
+    font-family: 'BitterRose', sans-serif;
+    font-size: 90px;
+    color: #FACE8D;
+}
+
+.location {
+    font-family: 'Chillax', sans-serif;
+    font-size: 160px;
+    color: #fff;
+}
+
+.quote {
+    font-family: 'Chillax', sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.navbar a {
+    font-family: 'Chillax', sans-serif;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    padding: 20px;
+    margin: 30px 32px; /* Space between each link */
+    background-color: #FACE8D;
+    border-radius: 30px;
+}
+
