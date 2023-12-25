@@ -3,141 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Image Page</title>
-    <style>
-        @font-face {
-            font-family: 'BitterRose';
-            src: url('assets/fonts/Bitter\ Rose\ DEMO.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Chillax';
-            src: url('assets/fonts/Chillax-Medium.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            position: relative;
-            scroll-behavior: smooth;
-        }
-
-        img {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .content {
-            text-align: center;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            position: relative;
-        }
-
-        .logo {
-            position: absolute;
-            margin-top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: auto;
-        }
-
-        .overlay-text {
-            position: absolute;
-            margin-top: 300px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'BitterRose', sans-serif;
-            font-size: 90px;
-            color: #FACE8D;
-        }
-
-        .menu-text {
-            position: absolute;
-            margin-top: 400px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Chillax', sans-serif;
-            font-size: 90px;
-            color: #FFFF;
-        }
-
-        .scroll-down-button {
-            position: absolute;
-            font-family: 'Chillax', sans-serif;
-            margin-top: 500px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #FACE8D;
-            color: #000;
-            font-weight: 500;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none; /* Remove underline for links */
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .down-arrow {
-            color: #FFFF;
-            position: absolute;
-            top: calc(100vh - 60px);
-            left: calc(50% - 14px);
-            width: 0;
-            height: 30px;
-            border: 2px solid;
-            border-radius: 2px;
-            }
-
-        .down-arrow:after {
-            content: " ";
-            position: absolute;
-            top: 12px;
-            left: -10px;
-            width: 16px;
-            height: 16px;
-            border-bottom: 4px solid;
-            border-right: 4px solid;
-            border-radius: 4px;
-            transform: rotateZ(45deg);
-        }
-
-        @keyframes jumpInfinite {
-            0% {
-                margin-top: 0;
-            }
-            50% {
-                margin-top: 20px;
-            }
-            100% {
-                margin-top: 0;
-            }
-        }
-
-        .down-arrow {
-  
-            animation: jumpInfinite 1.5s infinite;
-        }
-
-        
-    </style>
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <title>Menu</title>
+   
 </head>
 <body>
 
     <header>
-        <img class="logo" src="assets/images/logo.png" alt="Logo">
+        <a href="index.html">
+            <img class="logo" src="assets/images/logo.png" alt="Logo">
+        </a>
     </header>
 
     <div class="overlay-text">Check out</div>
@@ -147,40 +22,20 @@
     <img src="assets/images/menu.png" alt="Responsive Image">
 
     <div class="content" id="content">
-        <!-- Add more content below the image -->
+        <div class="menu-nav">
+            <ul>
+              <li><a href="#">Starters</a></li>
+              <li><a href="#">Breakfast</a></li>
+              <li><a href="#">Dinner</a></li>
+              <li><a href="#">Drinks</a></li>
+            </ul>
+          </div>
+          
+          <div class="menu-content">
+            </div>
     </div>
 
-    <script>
-    // Smooth scrolling function
-    const scrollTo = (element, duration = 1000) => {
-      const target = document.querySelector(element);
-      const targetPosition = target.offsetTop;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
 
-      const smoothScroll = () => {
-        const currentTime = Date.now();
-        const timeElapsed = currentTime - startTime;
-        const scrollStep = Math.min(distance, timeElapsed / duration * distance);
-        window.scrollTo({
-          top: startPosition + scrollStep,
-          behavior: 'smooth'
-        });
-
-        if (timeElapsed < duration) {
-          requestAnimationFrame(smoothScroll);
-        }
-      };
-
-      const startTime = Date.now();
-      requestAnimationFrame(smoothScroll);
-    };
-
-    // Add click event listener to the scroll down button
-    const scrollDownButton = document.querySelector('.scroll-down-button');
-    scrollDownButton.addEventListener('click', () => {
-      scrollTo('#content');
-    });
-    </script>
+    <link href="assets/js/menu.js">
 </body>
 </html>
